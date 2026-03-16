@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <main>
         <Hero/>
-
+<section className="flex flex-col items-center">
         {/* <!-- Neon Pink Button --> */}
 <button class="bg-accent-400 text-accent-foreground shadow-neon-pink hover:bg-accent-300">
   Cyberpunk Action
@@ -33,14 +33,14 @@ function App() {
   Content
 </div>
 
+</section>
 
-
-        {/* 
+        
         <About />
         <Projects />
         <Experience />
         <Testimonials />
-        <Contact /> */}
+        <Contact />
       </main>
     </div>
   )
