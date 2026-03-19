@@ -1,5 +1,5 @@
-import React from 'react'
-import Button from '../components/Button'
+// import { Button } from "@/components/Button";
+import Button from "../components/Button";
 import {
   ArrowRight,
   ChevronDown,
@@ -8,19 +8,43 @@ import {
   Twitter,
   Download,
 } from "lucide-react";
+import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+
+const skills = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "GraphQL",
+  "PostgreSQL",
+  "MongoDB",
+  "Redis",
+  "Docker",
+  "AWS",
+  "Vercel",
+  "Tailwind CSS",
+  "Prisma",
+  "Jest",
+  "Cypress",
+  "Figma",
+  "Git",
+  "GitHub Actions",
+];
 
 const Hero = () => {
   return (
-    <section className='relative min-h-screen flex items-center overflow-hidden'>
-      {/* BACKGROUND. */}
-      <div className='absolute inset-0'>
-        <img src="/hero-bg.jpg" 
-        alt="Hero img" 
-        className='w-full h-full object-cover opacity-40'/>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/50 to-background" />
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Bg */}
+      <div className="absolute inset-0">
+        <img
+          src="/hero-bg.jpg"
+          alt="Hero image"
+          className="w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
       </div>
 
-      {/* green dots */}
+      {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
@@ -38,7 +62,7 @@ const Hero = () => {
         ))}
       </div>
 
-        {/* Content */}
+      {/* Content */}
       <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
@@ -62,7 +86,7 @@ const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Dhaesha — a software engineer specializing in
+                Hi, I'm Pedro Machado — a software engineer specializing in
                 React, Next.js, and TypeScript. I build scalable, performant web
                 applications that users love.
               </p>
@@ -73,10 +97,10 @@ const Hero = () => {
               <Button size="lg">
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              {/* <AnimatedBorderButton>
+              <AnimatedBorderButton>
                 <Download className="w-5 h-5" />
                 Download CV
-              </AnimatedBorderButton> */}
+              </AnimatedBorderButton>
             </div>
 
             {/* Social Links */}
@@ -96,12 +120,73 @@ const Hero = () => {
                 </a>
               ))}
             </div>
-            </div>
-            </div>
           </div>
           {/* Right Column - Profile Image */}
+          <div className="relatice animate-fade-in animation-delay-300">
+            {/* Profile Image */}
+            <div className="relative max-w-md mx-auto">
+              <div
+                className="absolute inset-0 
+              rounded-3xl bg-gradient-to-br 
+              from-primary/30 via-transparent 
+              to-primary/10 blur-2xl animate-pulse"
+              />
+              <div className="relative glass rounded-3xl p-2 glow-border">
+                <img
+                  src="/profile-photo.jpg"
+                  alt="Pedro Machado"
+                  className="w-full aspect-[4/5] object-cover rounded-2xl"
+                />
 
-<div
+                {/* Floating Badge */}
+                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                    <span className="text-sm font-medium">
+                      Available for work
+                    </span>
+                  </div>
+                </div>
+                {/* Stats Badge */}
+                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
+                  <div className="text-2xl font-bold text-primary">5+</div>
+                  <div className="text-xs text-muted-foreground">
+                    Years Exp.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className="mt-20 animate-fade-in animation-delay-600">
+          <p className="text-sm text-muted-foreground mb-6 text-center">
+            Technologies I work with
+          </p>
+          <div className="relative overflow-hidden">
+            <div
+              className="absolute left-0 top-0 bottom-0 w-32
+             bg-gradient-to-r from-background to-transparent z-10"
+            />
+            <div
+              className="absolute right-0 top-0 bottom-0 w-32
+             bg-gradient-to-l from-background to-transparent z-10"
+            />
+            <div className="flex animate-marquee">
+              {[...skills, ...skills].map((skill, idx) => (
+                <div key={idx} className="flex-shrink-0 px-8 py-4">
+                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                    {skill}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 
       animate-fade-in animation-delay-800"
       >
@@ -114,7 +199,7 @@ const Hero = () => {
         </a>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
